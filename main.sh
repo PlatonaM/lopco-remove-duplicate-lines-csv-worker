@@ -41,7 +41,7 @@ if python -u add_unix_time.py "$data_cache" "$source_file" "${source_file}_1"; t
         first_line=$(head -n 1 "$data_cache/$source_file")
         echo "removing unix timestamps ..."
         if { echo "$first_line"; cut -d $delimiter -f "1"-$col_num "$data_cache/${source_file}_2"; } > "$data_cache/$output_file"; then
-            head -5 "$data_cache/${source_file}_3"
+            head -5 "$data_cache/$output_file"
             echo "total number of lines written:" $(( $(wc -l < "$data_cache/$output_file") - 1 ))
             if ! curl -s -S --header 'Content-Type: application/json' --data "{\""$DEP_INSTANCE"\": {\"output_csv\": \""$output_file"\"}}" -X POST "$JOB_CALLBACK_URL"; then
                 echo "callback failed"
