@@ -5,11 +5,7 @@
         "image": "platonam/lopco-remove-duplicate-lines-csv-worker:latest",
         "data_cache_path": "/data_cache",
         "description": "Remove dupclicated lines from a Comma-Separated Values file.",
-        "configs": {
-            "delimiter": null,
-            "time_column": null,
-            "time_format": null
-        },
+        "configs": null,
         "input": {
             "type": "single",
             "fields": [
@@ -31,5 +27,3 @@
             ]
         }
     }
-
-For the timestamp format as required by `time_format` please use these [format codes](https://docs.python.org/3/library/datetime.html#strftime-and-strptime-format-codes).
