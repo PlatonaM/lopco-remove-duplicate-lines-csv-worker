@@ -29,7 +29,7 @@ data_cache="/data_cache"
 echo "removing duplicates ..."
 if uniq "$data_cache/${source_file}" > "$data_cache/$output_file"; then
     head -5 "$data_cache/$output_file"
-    echo "total number of lines written:" $(( $(wc -l < "$data_cache/$output_file") - 1 ))
+    echo "total number of lines written:" $(wc -l < "$data_cache/$output_file")
     if ! curl -s -S --header 'Content-Type: application/json' --data "{\""$DEP_INSTANCE"\": {\"output_csv\": \""$output_file"\"}}" -X POST "$JOB_CALLBACK_URL"; then
         echo "callback failed"
         rm "$data_cache/$output_file"
