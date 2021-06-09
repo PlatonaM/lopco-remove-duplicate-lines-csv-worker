@@ -1,4 +1,24 @@
-#### Description
+## lopco-remove-duplicate-lines-csv-worker
+
+Remove duplicate lines a CSV file.
+
+### Configuration
+
+None
+
+### Inputs
+
+Type: single
+
+`source_file`: CSV file with duplicate lines.
+
+### Outputs
+
+Type: single
+
+`output_csv`: CSV file with unique lines.
+
+### Description
 
     {
         "name": "Remove Duplicate Lines CSV",
